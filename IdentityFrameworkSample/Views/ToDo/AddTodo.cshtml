@@ -1,0 +1,28 @@
+﻿<head>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+@{
+    ViewData["Title"] = "AddTodo";
+}
+@model string
+<h4>Add Todo item</h4>
+<form action="../ToDo/AddTodo" method="post">
+    <div>
+        <label for="TodoDesc" class="labelWidth">Description</label>
+        <input type="text" name="TodoDesc" placeholder="Description" required class="descriptionWidth"/>
+    </div>
+    <div>
+        <label for="DueDate" class="labelWidth">Due Date</label>
+        <input type="date" name="DueDate" placeholder="Due Date" required />
+    </div>
+    <div>
+        <label for="Complete" class="labelWidth">Complete</label>
+        <label class="radio-inline"><input type="radio" name="Complete" checked value="true" >Yes</label>
+        <label class="radio-inline"><input type="radio" name="Complete" value="false">No</label>
+    </div>
+    <div>
+        <input type="submit" class="btn-outline-primary" value="Save" action="../ToDo/AddTodo" />
+        @*<input type="submit" class="btn-outline-primary" value="Cancel" action="../ToDo/Cancel" />*@
+    </div>
+</form>
+
